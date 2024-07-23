@@ -17,7 +17,7 @@ const ProductsPage = () => {
   const [currentPage, setCurrentPage] = useState(1);
 
   const fetchProductsData = async () => {
-    let baseUrl = "http://localhost:3000/api/";
+    let baseUrl = "https://bczu0p-5173.ocws.app//api/";
     try {
       if (company !== "all" && category !== "all") {
         baseUrl += `companies/${company}/categories/${category}/products`;
