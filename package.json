@@ -1,0 +1,28 @@
+{
+  "name": "mern",
+  "version": "1.0.0",
+  "description": "NodeJS + Express + React + MongoDB",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "client": "cd client && npm run dev",
+    "server": "nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "mongoose": "^8.0.3",
+    "react-router-dom": "^6.24.1"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2",
+    "nodemon": "^3.0.2"
+  }
+}
