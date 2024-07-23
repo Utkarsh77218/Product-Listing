@@ -17,7 +17,7 @@ const ProductsPage = () => {
   const [currentPage, setCurrentPage] = useState(1);
 
   const fetchProductsData = async () => {
-    let baseUrl = "https://bczu0p-5173.ocws.app/api/";
+    let baseUrl = "http://localhost:3000/api/";
     try {
       if (company !== "all" && category !== "all") {
         baseUrl += `companies/${company}/categories/${category}/products`;
@@ -107,8 +107,8 @@ const ProductsPage = () => {
     setSort(event.target.value);
   };
 
-  const handleCurrentPageChange = (event) => {
-    setCurrentPage(event.target.value);
+  const handleCurrentPageChange = (_, pageNumber) => {
+    setCurrentPage(pageNumber);
   };
 
   return (
@@ -129,8 +129,8 @@ const ProductsPage = () => {
           productsLimit={12}
           currentPage={currentPage}
         />
-        <Box display="flex" justifyContent="center">
-          <CustomPagination
+        <Box display="flex" justifyContent="center" mt={3}>
+          <CustomPagination 
             totalPages={Math.ceil(productsList.length / 12)}
             onCurrentPageChange={handleCurrentPageChange}
           />
